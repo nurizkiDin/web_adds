@@ -3,23 +3,41 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
+h2 {
+    text-decoration-line: underline;
+    text-decoration-color: #ee0000;
+    text-decoration-thickness: 2px;
+    text-decoration-style: double;
+}
 header {
-    padding: 10px;
-    background-color: #009999;
+    background-color: #000000;
+    color: #ffffff;
     text-align: center;
+}
+.namapt {
+    font-size: 3em;
+    font-weight: 900;
+    text-transform: uppercase;
+    background-image: url("./galeri/tptm-6.jpeg");
+    background-size: cover;
+    padding: 200px;
+    box-sizing: border-box;
+    filter: brightness(50%);
+    text-shadow: 0 0 5px #ee0000, 0 0 10px #ff0000;
 }
 footer {
     padding: 10px;
-    background-color: #009999;
+    background-color: #ee0000;
+    color: #bbbbbb;
     text-align: center;
     font-weight: 700;
 }
 a {
     text-decoration: none;
-    color: black;
+    color: #bbbbbb;
 }
 a:hover {
-    color: #aa0000;
+    color: #ffffff;
     font-weight: 700;
 }
 .navigasi {
@@ -31,35 +49,74 @@ a:hover {
     padding: 10px;
     font-weight: 500;
     font-size: 1.2em;
+    background-color: #ee0000;
 }
 main {
     display: flex;
     flex-direction: row;
 }
 section {
-    flex-basis: 80%;
+    flex-basis: 75%;
     padding: 10px;
 }
 aside {
-    flex-basis: 20%;
+    flex-basis: 25%;
     padding: 10px;
+    background-color: #222222;
 }
 article {
     margin: 20px auto;
     padding: 10px;
     width: 60%;
+    /* border: 1px solid #000000;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #000000; */
+    user-select: none;
+}
+.slider {
+    position: relative;
+    padding: 10px;
     border: 1px solid #000000;
     border-radius: 10px;
     box-shadow: 5px 5px 15px #000000;
-    user-select: none;
+    box-sizing: border-box;
+}
+.slider .active {
+    display: block;
+    opacity: 1;
+}
+.img-slide {
+    width: 100%;
+    display: none;
+    opacity: 0;
+    animation-name: slider;
+    animation-duration: 2s;
+}
+.btn-slide {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 20px;
+    opacity: 0.5;
+}
+.btn-slide .btn {
+    background-color: #ffffff;
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.btn-slide .active {
+    background-color: rgb(100, 255, 255);
 }
 .infoKontak {
     margin: 20px auto;
     width: 80%;
     padding: 10px;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #000000;
+    color: #ffffff;
 }
 .whatsApp {
     width: 100%;
@@ -74,46 +131,23 @@ article {
 .galeri img {
     margin: 5px;
     flex-grow: 1;
-}
-.slider {
-    position: relative;
-    top: -25px;
-    left: -50px;
-}
-.img-slider {
-    position: relative;
     width: 100%;
-    top: 25px;
-    left: 50px;
-    animation-name: slider;
-    animation-duration: 2s;
 }
-.l-slider,
-.r-slider {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    font-size: 2em;
-    color: #000000;
-    z-index: 2;
-}
-.l-slider {
-    top: 50%;
-    left: 50px;
-}
-.r-slider {
-    top: 50%;
-    left: 100%;
-}
-.l-slider:hover,
-.r-slider:hover {
-    color: #ff0000;
+.layanan {
+    margin: 30px;
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #cccccc;
+    border-left: 5px solid #ee0000;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px #000000;
 }
 @media screen and (max-width:813px) {
     main {
         flex-direction: column;
+    }
+    .namapt {
+        padding: 50px;
     }
     article {
         width: 80%;
@@ -138,7 +172,7 @@ article {
     .bar1, .bar2, .bar3 {
         width: 35px;
         height: 5px;
-        background-color: #333;
+        background-color: #ee0000;
         margin: 6px 0;
         transition: 0.4s;
     }  
@@ -151,12 +185,8 @@ article {
     }
 }
 @keyframes slider {
-    from {opacity: 0;}
-    to {opacity: 1;}
-    /* 0%{opacity:0}
-    30%{opacity:1}
-    70%{opacity:1}
-    100%{opacity:1} */
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 @keyframes menuhp {
     0% {opacity: 0;}

@@ -57,3 +57,18 @@ function slider() {
     auto();
 }
 slider();
+let topBtn = document.getElementById('scrollTop');
+window.onscroll = function() {topBtnMuncul()};
+function topBtnMuncul() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        topBtn.style.display = 'block';
+        topBtn.style.opacity = 1;
+    } else {
+        topBtn.style.display = 'none';
+        topBtn.style.opacity = 0;
+    }
+}
+function keAtas() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}

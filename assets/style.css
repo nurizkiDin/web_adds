@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
 }
 h2 {
     text-decoration-line: underline;
@@ -13,6 +14,13 @@ header {
     background-color: #000000;
     color: #ffffff;
     text-align: center;
+}
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #000000;
+    text-align: center;
+    z-index: 3;
 }
 .namapt {
     font-size: 3em;
@@ -89,7 +97,7 @@ article {
     width: 100%;
     display: none;
     opacity: 0;
-    animation-name: slider;
+    animation-name: animasi1;
     animation-duration: 2s;
 }
 .btn-slide {
@@ -141,16 +149,41 @@ article {
     border-left: 5px solid #ee0000;
     border-radius: 5px;
     box-shadow: 5px 5px 15px #000000;
+    animation: layanan 1s ease-out;
+}
+#scrollTop {
+    display: none;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    z-index: 2;
+    top: 90%;
+    left: 95%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: 0 0 7px #ff0000;
+    background-image: linear-gradient(50deg, #ff0000, #ffffff);
+    animation-name: animasi1 1s;
 }
 @media screen and (max-width:813px) {
     main {
         flex-direction: column;
+    }
+    #scrollTop {
+        width: 30px;
+        height: 30px;
+        left: 90%;
     }
     .namapt {
         padding: 50px;
     }
     article {
         width: 80%;
+    }
+    .layanan {
+        font-size: 0.8em;
     }
     .galeri {
         flex-direction: column;
@@ -162,12 +195,13 @@ article {
     #navhp {
         display: none;
         opacity: 0;
-        animation-name: menuhp;
+        animation-name: animasi1;
         animation-duration: 0.5s;
     }
     .menu-hp {
         display: inline-block;
         cursor: pointer;
+        
     }
     .bar1, .bar2, .bar3 {
         width: 35px;
@@ -184,11 +218,12 @@ article {
         transform: translate(0, -11px) rotate(45deg);
     }
 }
-@keyframes slider {
+@keyframes animasi1 {
     0% {opacity: 0;}
     100% {opacity: 1;}
 }
-@keyframes menuhp {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+
+@keyframes layanan {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
 }

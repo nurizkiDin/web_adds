@@ -76,9 +76,6 @@ article {
     margin: 20px auto;
     padding: 10px;
     width: 60%;
-    /* border: 1px solid #000000;
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px #000000; */
     user-select: none;
 }
 .slider {
@@ -167,6 +164,79 @@ article {
     background-image: linear-gradient(50deg, #ff0000, #ffffff);
     animation-name: animasi1 1s;
 }
+.whyus {
+    background-color: #999999;
+    margin: -10px;
+    padding: 0;
+    user-select: none;
+}
+.whyus-line {
+    width: 100%;
+    transform: rotate(180deg);
+}
+.whyus-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.whyus-content {
+    position: relative;
+    text-align: center;
+    margin: 50px;
+    height: 300px;
+    width: 295px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px #ff0000;
+    box-sizing: border-box;
+}
+.whyus-content .whyus-icon {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    background-color: #999999;
+    width: 80px;
+    height: 80px;
+    transform: translateX(-50%);
+    top: -40px;
+    left: 50%;
+    border-radius: 10px;
+}
+.whyus-content .whyus-icon::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    top: 40px;
+    right: 100%;
+    border-top-right-radius: 50px;
+    box-shadow: 10px -10px 0 10px #999999;
+    z-index: -1;
+}
+.whyus-content .whyus-icon::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 30px;
+    top: 40px;
+    left: 100%;
+    border-top-left-radius: 50px;
+    box-shadow: -10px -10px 0 10px #999999;
+    z-index: -1;
+}
+.whyus-icon div {
+    background-color: #ffffff;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #ff0000;
+}
+.whyus-isi {
+    position: absolute;
+    top: 30%;
+}
 @media screen and (max-width:813px) {
     main {
         flex-direction: column;
@@ -224,6 +294,6 @@ article {
 }
 
 @keyframes layanan {
-    0% {transform: translateX(-100%);}
-    100% {transform: translateX(0);}
+    0% {transform: translateY(100%);}
+    100% {transform: translateY(0);}
 }
